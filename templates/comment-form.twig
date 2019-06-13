@@ -1,0 +1,24 @@
+{#<div class="comment-form blog-contact">#}
+    {#<form class="comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">#}
+
+        {#<input type="text" placeholder="Naam">#}
+        {#<input type="email" placeholder="E-mail">#}
+        {#<div class="button_fill contact-btn">Verzenden</div>#}
+
+    {#</form>#}
+{#</div>#}
+
+<div class="comment-form blog-contact">
+    <h2>Praat mee of stel een vraag</h2>
+    <h3>Blog reactie</h3>
+    <form class="comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+        <input required name="author" type="text" placeholder="Naam">
+        <input required name="email" type="email" id="email" placeholder="E-Mail">
+        <textarea placeholder="Bericht" name="comment" cols="60" rows="3"></textarea>
+        <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
+        <input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
+        <button class="button_fill contact-btn" type="submit" name="Submit" class="btn">Verzenden</button>
+    </form>
+</div>
+
+

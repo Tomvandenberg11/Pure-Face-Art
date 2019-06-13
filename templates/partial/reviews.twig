@@ -1,0 +1,23 @@
+{% if post.slug == 'home' and posts.review_writer %}
+    <div class="review-wrapper">
+        <div class="wrapper">
+            <div class="review-content">
+                <img class="quote" src="{{ theme.link }}/images/quote.png">
+                <h2>{{ posts.review_writer }}</h2>
+                <p>{{ posts.review_text }}</p>
+                <a href="{{ posts.link }}"><div class="button_fill">Bekijk project</div></a>
+            </div>
+        </div>
+        <div class="background"></div>
+    </div>
+{% elseif post.review_writer %}
+    <div class="review-wrapper">
+        <div class="wrapper">
+            <div class="review-content">
+                <img class="quote" src="{{ theme.link }}/images/quote.png">
+                <h2>{{ post.review_writer }}</h2>
+                <p>{{ post.review_text }}</p>
+            </div>
+        </div>
+    </div>
+{% endif %}

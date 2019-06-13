@@ -1,0 +1,399 @@
+.contact {
+
+  margin-top: 100px;
+
+  .contact_gegevens{
+    display: flex;
+    align-items: stretch;
+    //op tablet 50px extra door blok 50px over foto gaat
+    .contact-image {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      animation-name: load_image_large;
+      animation-duration: 1.5s;
+    ;
+      @media (max-width: 768px) {
+        height: 350px;
+      }
+    }
+    .contact-background {
+      background: url("../images/marmer.jpg");
+      background-size: cover;
+    }
+    .contact-content {
+      width: 100%;
+      height: 100%;
+
+      @media (max-width: 768px) {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        top: -50px;
+      }
+      .contact-text {
+        width: 60%;
+        height: inherit;
+        padding: 60px 0px;
+        margin-left: 100px;
+        @media (max-width: 768px) {
+          width: 100%;
+          background: white;
+          padding: 40px 40px 0px;
+          margin-left: 0px;
+        }
+        h2 {
+          text-align: left;
+          font-size: 30px;
+          line-height: 46px;
+          font-family: $secondary_font;
+          color: $dark_pink;
+          animation-name: load_text_1;
+          animation-duration: 1.5s;
+        }
+        h4 {
+          text-align: left;
+          font-size: 30px;
+          font-family: $primaire_font;
+          font-weight: bold;
+          animation-name: load_text_3;
+          animation-duration: 1.5s;
+          // @media (max-width: 1224px) {
+          //   font-size: 20px;
+          // }
+        }
+        p {
+          color: #000000;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 21px;
+          margin-top: 20px;
+          animation-name: load_text_2;
+          animation-duration: 1.5s;
+        }
+      }
+      .contact-details {
+        font-family: "Ubuntu", sans-serif;
+        margin-top: 50px;
+
+        @media (max-width: 768px) {
+          position: relative;
+          margin-top: 50px;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0px;
+
+          li {
+            margin-bottom: 29px;
+            line-height: 23px;
+            font-size: 19px;
+            font-weight: 300;
+            a {
+              display: inline-block;
+              color: $light_blue;
+            }
+            img {
+              width: 26px;
+              margin-right: 10px;
+            }
+            &:last-child{
+              margin-bottom: 0px;
+            }
+          }
+          .simcal-event{
+            width: 25px;
+            height: 25px;
+            margin: 0px;
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+  .agenda_form{
+    .row{
+      display: flex;
+      align-items: center;
+      @media (max-width: 768px) {
+        flex-flow: column-reverse;
+      }
+    }
+    .form{
+      margin-top: 80px;
+    }
+  }
+  .about-description {
+    color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    columns: 2;
+    margin: 80px 0 20px;
+    @media (max-width: 768px) {
+      columns: 1;
+      margin: 0px;
+      padding: 0;
+    }
+  }
+  .contact-wrapper {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    h2 {
+      color: #000000;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      text-align: left;
+      //@media (max-width: 768px) {
+      //  font-size: 30px;
+      //}
+    }
+    h3 {
+      color: #E6B7B0;
+      font-family: "Sue Ellen Francisco", sans-serif;
+      font-size: 30px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    input[type=text], input[type=email] {
+      outline: none;
+      width: 100%;
+      min-width: 300px;
+      border-radius: 4px;
+      background-color: #F3F3F3;
+      border: none;
+      font-family: "Ubuntu", sans-serif;
+      padding: 15px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    textarea {
+      outline: none;
+      width: 100%;
+      min-width: 300px;
+      border-radius: 4px;
+      background-color: #F3F3F3;
+      border: none;
+      font-family: "Ubuntu", sans-serif;
+      padding: 15px;
+      resize: none;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    form{
+      p{
+        margin-bottom: 20px;
+        &:nth-child(5){
+          width: auto;
+          height: auto;
+          background-color: $light_blue;
+          color: $white;
+          font-family: $primaire_font;
+          font-size: 18px;
+          line-height: 21px;
+          text-align: center;
+          position: relative;
+          border: none;
+          cursor: pointer;
+          display: inline-block;
+          input[type=submit] {
+            background-color: #89C6D0;
+            padding: 20px 60px;
+            color: #fff;
+            border: none;
+          }
+          span{
+            display: none;
+          }
+          &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            background-color: $light_blue;
+            transition: all  0.25s ease-in;
+            transition-delay: 0s;
+          }
+          &:hover{
+            &::after{
+              width: 107%;
+              height: 126%;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+    .wpcf7-response-output, .wpcf7-display-none, .wpcf7-validation-errors{
+      border: 0px solid #63A2B9;
+      border-radius: 4px;
+      color: $dark_pink;
+      padding: 0px;
+      font-family: $primaire_font;
+      box-sizing: border-box;
+      margin: 0px;
+    }
+    span.wpcf7-not-valid-tip{
+      color: $dark_pink;
+    }
+  }
+}
+//AGENDA
+.contact-wrapper{
+  .simcal-calendar{
+    @media (max-width: 768px) {
+      margin-top: 80px;
+    }
+    .simcal-calendar-grid{
+      thead{
+        tr{
+          .simcal-nav{
+            h3{
+              display: inline-block;
+              margin-bottom: 20px;
+              span{
+                font-weight: lighter;
+              }
+            }
+          }
+          .simcal-week-day{
+            text-transform: uppercase;
+          }
+        }
+      }
+      .simcal-month{
+        tr{
+          span{
+            font-family: $primaire_font;
+          }
+          td, .simcal-today{
+            div{
+              display: flex;
+              justify-content: center;
+              span{
+                font-weight: 200;
+                margin: 10px 0px;
+              }
+              .simcal-no-events{
+                display: none;
+              }
+              .simcal-day-label{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $white;
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+          //empty days
+          .simcal-day-void{
+            background-color: $white;
+          }
+          //hover
+          .simcal-day{
+            &:hover{
+              background-color: $white;
+            }
+          }
+          //actives
+          .simcal-day-has-events{
+            position: relative;
+            div{
+              display: inline-block;
+              .simcal-day-label{
+                background-color: $dark_blue !important;
+                border-radius: 50%;
+                color: $white !important;
+              }
+              .simcal-events-dots{
+                display: inline-block;
+                min-height: 0px !important;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                b{
+                  display: none;
+                }
+              }
+            }
+          }
+          .simcal-event{
+            width: 25px;
+            height: 25px;
+            margin: 0px;
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            span{
+              display: none !important;
+            }
+          }
+          //Today
+          .simcal-today{
+            div{
+              border: 0px solid rgb(30, 115, 190) !important;
+              .simcal-day-label{
+                // background-color: $white !important;
+                // color: $black !important;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//on click agenda
+.simcal-event-bubble{
+  box-shadow: 0 1px 2px rgba(0,0,0,0) !important;
+  border: 2px solid $dark_blue !important;
+  box-sizing: border-box;
+  .qtip-content{
+    padding: 12px;
+    ul{
+      padding: 0px !important;
+      margin: 0px;
+      li{
+        .simcal-event-details{
+          p{
+            margin: 0px;
+            &:last-child{
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+    .simcal-event-details{
+      p{
+        margin: 0px;
+        &:last-child{
+          display: none !important;
+        }
+      }
+    }
+  }
+}

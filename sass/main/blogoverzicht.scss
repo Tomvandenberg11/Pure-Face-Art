@@ -1,0 +1,277 @@
+.maincontainer {
+  width: 100%;
+  display: flex;
+
+
+}
+.maincontainer {
+  .blogcontainer {
+    width: 100%;
+    //margin-top: 20px;
+    //display: flex;
+    //justify-content: space-between;
+  }
+  .filtercontainer {
+    width: 45%;
+  }
+}
+.filtercontainer {
+  .filterbox {
+    position: fixed;
+    max-width: 500px;
+    margin: 100px 50px;
+    width: 100%;
+    border: 10px solid $light_pink;
+    min-width: 500px;
+  }
+  .titel {
+    background: $dark_pink;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    top: -70px;
+    left: 0;
+    right: 0;
+    font-family: "Sue Ellen Francisco", cursive;
+    padding: 30px 0;
+    font-size: 48px;
+    color: $white;
+  }
+  .list {
+    margin: 100px 0;
+    padding: 0;
+    height: 90%;
+    width: 100%;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .text {
+    color: #E6B7B0;
+    transition: .2s;
+    cursor: pointer;
+  }
+  .text.active {
+    color: grey;
+  }
+  .cross.active {
+    visibility: hidden;
+    transition: .1s;
+  }
+  .cross {
+    transition: .1s;
+    cursor: pointer;
+    display: inline-block;
+    background: url("images/kruisje.svg") no-repeat;
+    fill: black;
+    height: 15px;
+    margin: 0 0 0 30px;
+    padding: 0 15px;
+  }
+  li {
+    padding: 10px 15px;
+    width: max-content;
+  }
+  li:hover {
+    opacity: 0.5;
+  }
+}
+.blogblok {
+  display: flex;
+  //margin: 20px 0;
+  align-items: center;
+  width: 50%;
+  cursor: pointer;
+  margin-bottom: 70px;
+
+}
+.blogblok {
+  .image {
+    //background: url("https://st2.depositphotos.com/1079647/11096/i/950/depositphotos_110967136-stockafbeelding-visagist-toepassing-van-oogschaduw.jpg");
+    width: 40%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+.tekst {
+  padding: 30px 50px 20px;
+  width: 60%;
+  position: relative;
+  background: url("../images/marmer.jpg");
+  box-sizing: border-box;
+}
+.tekst {
+  .share{
+    flex-flow: column;
+    height: max-content;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 5px;
+    display: none;
+    z-index: 5;
+  }
+  .share a {
+    padding: 5px 0;
+  }
+  .sharefb {
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    transition: .4s;
+    opacity: 0;
+  }
+  .sharept {
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    transition: .2s;
+    opacity: 0;
+  }
+  .active {
+    display: flex;
+    opacity: 1;
+    right: 5px;
+  }
+  .moved {
+    bottom: 85px;
+    opacity: 1;
+    transition: .2s;
+  }
+  .moved2 {
+    bottom: 50px;
+    opacity: 1;
+    transition: .2s;
+  }
+  .datum {
+    font-family: $secondary_font;
+    color: $dark_pink;
+    font-size: 22px;
+  }
+  .titel {
+    font-family: $primaire_font;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 30px;
+    overflow: hidden;
+    width: 100%;
+    line-height: 24px;
+  }
+  .sharebtn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    border-top-left-radius: 100%;
+    background: $light_blue;
+    color: white;
+    font-size: 40px;
+    text-align: right;
+    z-index: 10;
+  }
+  .sharebtn {
+    img {
+      height: 40px;
+      width: 20px;
+      float: right;
+      margin: 10px;
+    }
+  }
+  .sharefb, .sharept {
+    img {
+      height: 30px;
+      width: 30px;
+      float: right;
+      margin-bottom: 10px;
+    }
+  }
+  .click_block{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+.paginationcontainer {
+  width: 100%;
+}
+.meerlezen {
+  color: $light_blue;
+  font-weight: 600;
+}
+.paginationcontainer {
+  .paginate {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 0;
+  }
+  li {
+    cursor: pointer;
+    border-radius: 200%;
+    border: 1px solid black;
+    height: 17.5px;
+    width: 17.5px;
+    margin: 15px;
+    text-align: center;
+    transition: .1s;
+  }
+  li:hover {
+    background: $black;
+  }
+  .active {
+  }
+}
+@media screen and (max-width: 992px) {
+  .maincontainer {
+    flex-flow: column-reverse;
+  }
+  .maincontainer {
+    .filtercontainer {
+      width: 100%;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+    .blogcontainer {
+      margin: 0 auto;
+      min-width: unset;
+      width: 100%;
+    }
+  }
+  .filtercontainer {
+    .filterbox {
+      position: relative;
+      margin: 100px auto;
+      min-width: unset;
+      max-width: unset;
+      width: 100%;
+    }
+  }
+  .blogcontainer {
+    .blogblok {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 0px 20px;
+      margin-bottom: 20px;
+      // margin: 20px 2%;
+      // max-width: 46%  !important;
+    }
+    .image {
+      width: 100%;
+    }
+    .tekst {
+      width: 100%;
+      padding-top: 30px;
+    }
+  }
+}

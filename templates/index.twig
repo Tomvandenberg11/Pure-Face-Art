@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="projects">
+        {% include 'partial/project-highlight.twig' %}
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-12">
+					<div class="projects-container">
+						<div class="row">
+							{% include 'partial/all-projects.twig' %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

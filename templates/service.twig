@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="pageheader">
+            <h1>Diensten</h1>
+        </div>
+        <div class="dienstencontainer">
+
+             {% for post in posts %}
+                     <div class="dienst">
+                         <a href="{{ post.link }}">
+                        <div class="img_container">
+                            <div class="images" style="background-image: url('{{ Image(post.service_image).src|resize(640) }}')"></div>
+                        </div>
+                        <div class="diensttext">
+                            <h2 class="title">{{ post.title }}</h2>
+                        </div>
+                         </a>
+                     </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

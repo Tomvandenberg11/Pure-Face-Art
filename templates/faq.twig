@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="faq">
+    <div class="marmer"></div>
+    <div class="wrapper">
+        <h1 class="faq_title">FAQ</h1>
+
+        <div class="container">
+            {% for item in post.meta('faq_question') %}
+                <a class="question">
+                    <img class="right_arrow" src="{{ theme.link }}/images/right.svg" >
+                    <img class="right_arrow_hover" src="{{ theme.link }}/images/right_hover.svg" >
+                    <h4>{{ item.faq_question }}</h4>
+                </a>
+                <div class="anwser">
+                    <p>{{ item.faq_answer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("question");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var anwser = this.nextElementSibling;
+                if (anwser.style.maxHeight){
+                    anwser.style.maxHeight = null;
+                } else {
+                    anwser.style.maxHeight = anwser.scrollHeight + "px";
+                }
+            });
+        }
+
+    </script>
+
+
+
+
+
+{% endblock %}

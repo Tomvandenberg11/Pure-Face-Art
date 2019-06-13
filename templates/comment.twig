@@ -1,0 +1,19 @@
+<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+
+	{% if comment.author %}
+		<div class="reply-section">
+			<h2>Reacties</h2>
+			{% for comment in post.comments %}
+				<div class="single-reply">
+					<p class="reply-name">{{comment.author}}</p>
+					<p class="reply-date">{{ comment.date }}</p>
+					<p class="reply-text">{{comment.comment_content|wpautop}}</p>
+					{#<a href=""><div class="reply"><img src="icons/pijl.svg">Beantwoorden</div></a>#}
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+		{% include "comment-form.twig" %}
+
+</div>

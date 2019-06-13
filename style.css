@@ -1,0 +1,286 @@
+/*
+ * Theme Name: Pure Face Art theme
+ * Description: The theme for the Pure Face Art website
+ * Version: 1.0
+ * Author: Menno van Noort, Twan van den Elst, Chico Neeskens, Sabine van Bemmelen, Dzabir Husovic and Tom van den Berg
+*/
+
+body{
+    margin:0;
+    padding:0;
+    background-image:url('images/marmer.jpg');
+    background-repeat:no-repeat;
+}
+.back-section{
+    padding-top:50px;
+    display:flex;
+    justify-content:space-between;
+}
+.back-part{
+    width:33.33%;
+    color: #000000;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:light;
+    font-size: 16px;
+    line-height: 18px;
+    display:inline-block;
+}
+.title-section{
+    width:100%;
+    height:auto;
+}
+.title-section .title-container {
+    /* width:600px; */
+    height:auto;
+    margin:0 auto;
+}
+.title-section .title-container h1 {
+    color: #000000;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 80px;
+    text-align: center;
+}
+.title-section .title-container h2 {
+    color: #E7B7B0;
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 45px;
+    line-height: 88px;
+    text-align: center;
+}
+.content-wrapper{
+    width:80%;
+    max-width:1000px;
+    display:block;
+    margin:0 auto;
+    padding:0 10px;
+}
+.text-section{
+    margin:0 auto;
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+}
+.project-text{
+    color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: light;
+    font-size: 16px;
+    line-height: 21px;
+    columns: 2;
+    padding:50px 0;
+}
+
+.detail-section{
+    text-align:center;
+    display:flex;
+    justify-content: center;
+}
+.project-details{
+    display:inline-block;
+    padding:0 15px;
+}
+.bold{
+    font-weight:bold;
+}
+.project-navigation{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.project-navigation a{
+    color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:light;
+    font-size: 16px;
+    line-height: 18px;
+}
+.project-navigation a p{
+    display:inline-block;
+    color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:light !important;
+    font-size: 16px;
+    line-height: 18px;
+
+}
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+/* COLORS */
+/* TYPOGRAPHY */
+h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+    font-family: "Sue Ellen Francisco", cursive;
+    font-size: 50px;
+    text-align: center;
+    color: #E6B7B0;
+    margin: 0px;
+}
+
+h3 {
+    font-family: "Sue Ellen Francisco", cursive;
+    font-size: 40px;
+    text-align: center;
+    color: #E6B7B0;
+}
+
+p {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    text-align: left;
+    line-height: 21px;
+}
+
+/* BUTTONS */
+.button_fill {
+    width: auto;
+    height: auto;
+    padding: 20px 60px;
+    background-color: #89C5D1;
+    color: #FFFFFF;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.button_line {
+    width: auto;
+    height: auto;
+    padding: 16px 46px;
+    color: #89C5D1;
+    border: 4px solid #89C5D1;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 1280px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* FORMULIEREN */
+.slider {
+    margin-top: 40px;
+}
+.slider .slick-track {
+    display: flex;
+    min-height: 300px;
+}
+.slider .slick-track .slick-current {
+    height: 300px !important;
+    opacity: 1 !important;
+}
+.slider .slick-track .slider_element {
+    width: 420px;
+    height: 250px;
+
+    opacity: 0.5;
+    margin: auto 10px;
+    transition: all 1s ease-in;
+}
+.slider .slick-track .slider_element img {
+    height: 100%;
+}
+
+.slider .slick-dots {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0px;
+    margin-top: 40px;
+}
+.slider .slick-dots li {
+    height: 10px;
+    width: 10px;
+    margin: 0px 10px;
+}
+.slider .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    padding: 0px;
+    float: left;
+}
+
+.slick-slide {
+    outline: none !important;
+}
+.slider .slick-dots .slick-active button {
+    background-color: #000000;
+}
+
+ul {
+    list-style: none;
+}
+
+/*# sourceMappingURL=slider.css.map */
+
+
+/* SLIDER CSS */
+@media only screen and (max-width: 900px){
+    .project-text{
+        columns: 1;
+        padding:0px 30px;
+    }
+    .detail-section{
+        margin-top:20px;
+    }
+    .title-section .title-container h1{
+        font-size:48px;
+    }
+    .title-section .title-container h2{
+        font-size:30px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .title-section .title-container h1{
+        font-size:35px;
+        line-height:80px;
+    }
+    .title-section .title-container h2{
+        font-size:25px;
+        line-height:0;
+    }
+    .back-part{
+        padding-top:10px;
+        width:100%;
+        text-align:center;
+        font-size: 14px;
+        line-height: 18px;
+        display:inline-block;
+    }
+    .detail-section{
+        display: block;
+    }
+    .project-details{
+        display:block;
+        width:100%;
+        padding:0;
+    }
+}

@@ -1,0 +1,248 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% if post.type == 'projects' %}
+		<div class="background_image_contact" style="background-image: url('/images/marmer.jpg');"></div>
+		<div class="wrapper">
+			<div class="back-section content-wrapper">
+				<div class="overzicht_container col-hidden col-12 col-sm-4">
+					<a href="{{ site.link }}/projecten" class="a_leftarrow">
+						<div class="back-part overzicht">
+							<div class="left_arrow"></div>
+							<p>Naar overzicht</p>
+						</div>
+					</a>
+				</div>
+				<div class="back-part col-12 col-sm-4" style="text-align:center">
+
+                    {% if post.prev %}
+						<a href="{{ post.prev.link }}" class="a_leftarrow"><div class="left_arrow"></div></a>
+                    {% endif %}
+					Project
+                    {% if post.next %}
+						<a href="{{ post.next.link }}" class="a_rightarrow"><div class="right_arrow"></div></a>
+                    {% endif %}
+					<!-- <img style="height:18px" src="images/right.svg"> -->
+				</div>
+				<div class="back-part col-12 col-hidden col-sm-4"></div>
+			</div>
+			<div class="title-section">
+				<div class="title-container">
+					<h1>{{ post.project_title }}</h1>
+					<h2>{{ post.project_subtitle }}</h2>
+				</div>
+			</div>
+
+
+
+			<!-- BEGIN SLIDER HTML CODE -->
+			<div class="slider center content-wrapper">
+
+                {% for image in post.meta('project_slider') %}
+					<div style="background-image: url('{{ Image(image.project_image).src }}')" class="slider_element">
+					</div>
+                {% endfor %}
+
+			</div>
+			<!-- <ul>
+                <li class="prev">prev</li>
+                <li class="next">next</li>
+            </ul> -->
+			<div class="slider-dots"></div>
+			<!-- EINDE SLIDER HTML CODE -->
+
+
+			<div class="content-wrapper">
+				<div class="text-section content-wrapper" >
+					<div class="project-text">{{ post.project_description }}</div>
+				</div>
+			</div>
+
+			<div class="content-wrapper">
+				<div class="detail-section">
+					<p class="project-details"><span class="bold">Datum: </span>{{ post.project_date|date("d-m-Y") }}</p>
+					<p class="project-details"><span class="bold">Opdrachtgever: </span>{{ post.project_ordener }}</p>
+					<p class="project-details"><span class="bold">Delen: </span>&nbsp;
+						<a class="social_hover social_dark_blue" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://purefaceart.com/projecten/{{ post.slug }}">
+							<svg class="dark_blue" style="margin-top: -2px;width: 20px;" id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><defs><style>.cls-1{fill:#63a2b9;}</style></defs><title>facebook</title><g id="mask"><g id="mask-2"><path id="path-1" class="cls-1" d="M16,1A15,15,0,1,0,31,16,15,15,0,0,0,16,1Zm4,10.61H17.71a0.79,0.79,0,0,0-.57.86v1.72H20l-0.43,2.45H17.14V24H14.45V16.64H12V14.19h2.45V12.75A3.47,3.47,0,0,1,17.62,9H20v2.61Z" transform="translate(-1 -1)"/></g></g></svg>
+						</a>
+					</p>
+				</div>
+			</div>
+
+            {% include 'partial/reviews.twig' %}
+		</div>
+
+		<div class="contact">
+			<div class="wrapper agenda_form" class="row ">
+				<div class="row">
+					<div class="col-12 col-md-5">
+                        {% include 'partial/contact-agenda.twig' %}
+					</div>
+					<div class="col-12 col-md-1"></div>
+					<div class="col-12 col-md-6 form">
+                        {% include 'partial/contact-form.twig' %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="wrapper">
+
+		<div class="content-wrapper">
+			<div class="project-navigation">
+				{% if post.prev %}
+					<a class="a_leftarrow" href="{{ post.prev.link }}"><div class="left_arrow"></div><p>Vorig project</p></a>
+					{% else %}
+					<span></span>
+				{% endif %}
+				{% if post.next %}
+					<a class="a_rightarrow" href="{{ post.next.link }}"><p>Volgend project</p><div class="right_arrow"></div></a>
+				{% endif %}
+			</div>
+		</div>
+		</div>
+	{% elseif post.type == 'services' %}
+
+		<div class="detail-header">
+			<div class="backgroun_image"></div>
+			<div style="background-image: url('{{ Image(post.service_image).src }}')" class="detail-image"></div>
+			<div class="detail-content">
+				<div class="detail-text">
+					<a href="{{ site.link }}/diensten" class="a_leftarrow a-back-part">
+						<div class="back-part overzicht">
+							<div class="left_arrow"></div>
+							<p>Naar overzicht</p>
+						</div>
+					</a>
+					<h1>{{ post.title }}</h1>
+					<p>{{ post.service_text }}</p>
+					<a href="{{ site.link }}/contact"><div class="button_fill">Contact opnemen</div></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper dienst_overzichts_wrapper">
+			<div class="opdrachten-wrapper">
+				<h2>Gerelateerde opdrachten</h2>
+				<div class="row">
+                    {% for post in posts %}
+						<div class="col-lg-3 col-sm-6 item">
+							<a href="{{ post.link }}">
+								<div class="project_item">
+									<div class="pi_background_containter"><div class="pi_background" style="background-image: url('{{ Image(post.project_thumbnail).src|resize(640) }}')"></div></div>
+									<div class="text_block">
+										<h3>{{ post.project_title }}</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+
+    {% elseif post.type == 'blogs' %}
+		<div class="singleblog-wrapper">
+			<div style="background-image: url('{{ Image(post.blog_image).src }}')" class="singleblog-img"></div>
+			<div class="singleblog-title">
+				<h2>{{ post.blog_date|date("d-m-Y") }}</h2>
+				<h1>{{ post.title }}</h1>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-md-7">
+					<a href="{{ site.link }}/blog" class="a_leftarrow"><div class=" left_arrow"></div> <p>Terug naar overzicht</p></a>
+					<div class="singleblog-left">
+						<p class="singleblog-text">{{ post.blog_text }}</p>
+					</div>
+					<div class="share-icons">
+						<!-- <div class="views"><img src="icons/facebook.svg">60 mensen bekeken</div> -->
+						<div class="share">
+							Delen: <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://purefaceart.com/blogs/{{ post.slug }}"><img class="blog-icons" src="{{ theme.link }}/images/facebook.png"></a>
+							<a target="_blank" href="https://pinterest.com/pin/create/button/?url={{ Image(post.service_image).src }}&media={{ post.link }}&description="><img class="blog-icons" src="{{ theme.link }}/images/instagram.png"></a>
+
+						</div>
+					</div>
+
+					<div class="blog-more">
+						<div class="blog-more-img" style="background-image: url('{{ Image(contact.contact_image).src|resize(640) }}')"></div>
+						<div class="blog-more-content">
+							<h4>{{ contact.contact_name }}</h4>
+							<p>{{ contact.contact_quote }}</p>
+							<a href="{{ site.link }}/contact"><div class="button_fill blog-more-button">Meer over mij</div></a>
+						</div>
+					</div>
+
+                    {% include 'comment.twig' %}
+
+				</div>
+
+				<div class="col-md-1"></div>
+				<div class="col-md-4">
+					<div class="singleblog-right">
+						<div class="latest-posts">
+							<h3>Laatste posts</h3>
+
+							{% for post in blogs %}
+								<div class="latest-single">
+									<div style="background-image: url('{{ Image(post.blog_image).src|resize(640) }}')" class="latest-img"></div>
+									<div class="latest-text">{{ post.blog_text }}</div>
+									<a href="{{ post.link }}"><div class="button_fill latest-button">Meer lezen</div></a>
+								</div>
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1 style="font-size: 30px;">Volg mij op Instagram!</h1>
+            {{ '[instagram-feed]' | shortcodes  }}
+		</div>
+	{% endif %}
+
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<!-- <script type="text/javascript" src="js/slider.js"> -->
+
+	<script type="text/javascript">
+        $('.center').slick({
+            arrows: false,
+            centerMode: true,
+            infinite: true,
+            autoplay: true,
+            cssEase: 'linear',
+            dots: true,
+            slidesToShow: 1,
+            autoplaySpeed: 5000,
+            speed: 1000,
+            variableWidth: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+	</script>
+{% endblock %}

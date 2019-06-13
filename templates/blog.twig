@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <div class="pageheader">
+            <h1>Blog</h1>
+        </div>
+        <div class="maincontainer">
+            <div class="blogcontainer">
+                <div class="row">
+                    {% for post in posts %}
+                        {#{{ dump(post) }}#}
+                        <div class="blogblok col-12 col-md-6">
+                            <div class="image" onclick="location='{{ post.link }}'" style="background-image: url('{{ Image(post.blog_image).src }}')" id="img1"></div>
+                            <div class="tekst">
+                                <a href=""></a><p class="datum">{{ post.blog_date|date("d-m-Y") }}</p>
+                                <p class="titel">{{ post.title }}</p>
+                                <span class="info">{{ post.blog_description }}...</span>
+                                <span class="meerlezen"> Meer Lezen</span></p>
+                                <div class="sharebtn" href="#"><img src="{{ theme.link }}/images/pijl.svg" /></div>
+                                <div class="share">
+                                    <a class="sharefb" href="https://www.facebook.com/sharer/sharer.php?u=https://purefaceart.com/blogs/{{ post.slug }}"><img src="{{ theme.link }}/images/facebook.png" /></a>
+                                    <a class="sharept" href="https://pinterest.com/pin/create/button/?url={{ Image(post.blog_image).src }}&media={{ post.title }}&description="><img src="{{ theme.link }}/images/pinterest.svg" /></a>
+                                </div>
+                                <div class="click_block" onclick="location='{{ post.link }}'"></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

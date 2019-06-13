@@ -1,0 +1,77 @@
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+.slider{
+    margin-top: 40px;
+
+    .slick-track{
+        display: flex;
+        min-height: 300px;
+
+        .slick-current{
+            height: 300px !important;
+            opacity: 1 !important;
+        }
+        .slider_element{
+            width: 420px;
+            height: 250px;
+            //background-image: url("../images/foto1.jpg");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            margin: auto 10px;
+            transition: all 1s ease-in;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0px;
+        margin: 40px 0px 0px;
+
+        li{
+            height: 10px;
+            width: 10px;
+            margin: 0px 10px;
+
+            button{
+                font-size: 0;
+                line-height: 0;
+                height: 100%;
+                width: 100%;
+                border: 1px solid $black;
+                border-radius: 50%;
+                padding: 0px;
+                float: left;
+                transition: all 0.5s ease-in;
+                outline: none;
+
+                &:hover{
+                    background-color: $black;
+                }
+            }
+        }
+        .slick-active{
+            button{
+                background-color: $black;
+                transition: all 0.5s ease-in;
+            }
+        }
+    }
+
+    .slick-slide {
+        outline: none !important;
+    }
+}
+
+//OVERALL
+
+ul{
+    list-style: none;
+}

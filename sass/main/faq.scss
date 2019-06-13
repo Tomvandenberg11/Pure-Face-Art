@@ -1,0 +1,118 @@
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+.faq {
+  .wrapper{
+    width: 70%;
+
+    h1{
+      font-size: 80px;
+      padding: 70px 0px 20px 0px;
+    }
+  }
+
+
+  .container{
+    //margin: 30px 10px;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    .question {
+      background-color: none;
+      color: $black;
+      cursor: pointer;
+      padding: 18px 0;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+      font-family: $primaire_font;
+      display:flex;
+      align-items: center;
+
+
+      &:hover {
+        .right_arrow{
+          display: none;
+        }
+        .right_arrow_hover{
+          display: block;
+          height: 18px;
+          width: auto;
+          margin-right: 20px;
+        }
+        h4{
+          color: $dark_blue;
+        }
+      }
+      h4{
+        margin-bottom: auto;
+      }
+
+    }
+
+    .anwser {
+      padding-left: 67px;
+      background-color: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+  }
+
+  .right_arrow{
+    background-image:none;
+    display: block;
+    margin-right: 20px;
+  }
+
+  .right_arrow_hover {
+    height: 18px;
+    width: auto;
+    display: none;
+    margin-left: 10px;
+  }
+
+  .active {
+    .right_arrow{
+      display: none;
+    }
+    .right_arrow_hover{
+      transform: rotate(90deg) !important;
+      transition: transform 0.2s;
+      transition-timing-function: ease-in;
+      display: block;
+      height: 18px;
+      width: auto;
+      margin-right: 20px;
+    }
+    // .right_arrow_hover{
+    //   transform: rotate(90deg) !important;
+    //   transition: transform 0.2s;
+    //   transition-timing-function: ease-in;
+    // }
+
+    h4{
+      color: $dark_blue;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .wrapper{
+      width: 80%;
+    }
+    .question h4{
+      font-size: 18px;
+    }
+    .container .anwser{
+      padding-left: 67px;
+    }
+
+  }
+}
+
+

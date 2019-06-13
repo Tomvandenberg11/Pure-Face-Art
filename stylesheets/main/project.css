@@ -1,0 +1,197 @@
+.back-section{
+  display:flex;
+  justify-content:space-between;
+}
+.back-part{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:33.33%;
+  color: #000000;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 50px;
+}
+.a-back-part{
+  width:33.33%;
+}
+.overzicht{
+  justify-content: flex-start;
+  width: auto !important;
+}
+.title-section{
+  width:100%;
+  height:auto;
+}
+.title-section .title-container {
+  /* width:600px; */
+  height:auto;
+  margin-top: 50px;
+}
+.text-section{
+  margin:0 auto;
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+}
+.project-text{
+  color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  padding:20px;
+  font-size: 16px;
+  line-height: 21px;
+  columns: 2;
+  margin: 40px 0;
+}
+.detail-section{
+  text-align:center;
+  display:flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.project-details{
+  display: flex;
+  align-items: center;
+  padding:0px 15px;
+}
+.project-details span {
+  padding-right: 5px;
+}
+.bold{
+  font-weight:bold;
+}
+.project-navigation{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0;
+}
+.project-navigation a{
+  color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight:light;
+  font-size: 16px;
+  line-height: 18px;
+}
+.project-navigation a p{
+  display:inline-block;
+  color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight:light !important;
+  font-size: 16px;
+  line-height: 18px;
+}
+.overzicht_container, .back-part{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.pagination_mobile{
+  display: none;
+}
+.background_image_contact{
+  background-image:url('.../images/marmer.jpg');
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  z-index: -150;
+}
+.title-container h1{
+  font-size: 40px;
+}
+/* SLIDER CSS */
+@media only screen and (max-width: 900px){
+  .project-text{
+    columns: 1;
+    padding:30px 0;
+    margin: 0;
+  }
+  .detail-section{
+    margin-top:20px;
+  }
+  .title-section .title-container {
+    /* margin-top: -20px; */
+  }
+  .title-section .title-container h1{
+    font-size:45px;
+  }
+  .title-section .title-container h2{
+    font-size:30px;
+  }
+}
+@media only screen and (max-width: 768px){
+  .text-section, .detail-section {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .project-navigation {
+    display: flex;
+    width: 100%;
+    margin: 50px auto;
+  }
+  .back-section{
+    flex-wrap: wrap;
+  }
+  .back-section .a-back-part{
+    display: none !important;
+  }
+  .back-section .back-part{
+    width: 100%;
+  }
+  .project-details{
+    padding:0px;
+  }
+}
+@media only screen and (max-width: 500px){
+  .title-section .title-container h1{
+    font-size:35px;
+    line-height:35px;
+    padding-bottom: 30px;
+  }
+  .title-section .title-container h2{
+    font-size:25px;
+    line-height:0;
+  }
+  .back-part{
+    padding-top:10px;
+    width:100%;
+    text-align:center;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .detail-section{
+    display: block;
+  }
+  .project-details{
+    display:block;
+    width:100%;
+    padding:0;
+  }
+  .col-hidden{
+    display: none;
+  }
+}
+@media only screen and (max-width: 575px){
+  .col-hidden{
+    display: none;
+  }
+}
+@media (max-width: 350px) {
+  .project-navigation{
+    justify-content: center;
+    align-items: center;
+  }
+  .pagination_mobile{
+    display: block;
+    margin: 0px;
+  }
+  .project-navigation a p{
+    display: none;
+  }
+}

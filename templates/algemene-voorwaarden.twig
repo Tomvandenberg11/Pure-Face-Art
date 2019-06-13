@@ -1,0 +1,45 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div style="margin-top: 150px;" class="wrapper">
+        <h1>{{ post.title }}</h1>
+        <p style="margin-top: 50px;">{{ post.content_text }}</p>
+
+
+    <div class="faq">
+        <div class="container">
+            {% for item in post.meta('article') %}
+                <a class="question">
+                    <img class="right_arrow" src="{{ theme.link }}/images/right.svg" >
+                    <img class="right_arrow_hover" src="{{ theme.link }}/images/right_hover.svg" >
+                    <h4>{{ item.article_title }}</h4>
+                </a>
+                <div class="anwser">
+                    <p>{{ item.article_text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        var acc = document.getElementsByClassName("question");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var anwser = this.nextElementSibling;
+                if (anwser.style.maxHeight){
+                    anwser.style.maxHeight = null;
+                } else {
+                    anwser.style.maxHeight = anwser.scrollHeight + "px";
+                }
+            });
+        }
+
+    </script>
+
+{% endblock %}

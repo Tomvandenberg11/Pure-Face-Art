@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+.error_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h1{
+        font-size: 120px;
+        color: $light_pink;
+    }
+    h2{
+        font-family: $primaire_font;
+        font-size: 25px;
+        color: $black;
+    }
+    .button_fill{
+        margin-top: 40px;
+    }
+}

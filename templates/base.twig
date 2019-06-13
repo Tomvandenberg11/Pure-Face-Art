@@ -1,0 +1,60 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+
+			{% block header %}
+				{% include "partial/menu.twig" with {'menu': menu.get_items} %}
+			{% endblock %}
+
+		<div id="content" role="main" class="content-wrapper">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</div>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'partial/footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+<script>
+
+	$('.js_burger').click(function() {
+		$('body').addClass('openmenu');
+	});
+
+    $('.js_cross').click(function() {
+        $('body').removeClass('openmenu');
+    });
+
+    $(document).on('click touchstart', function () {
+
+        if (!$(event.target).closest(".header-menu-mb-hamburger,.header-menu-mb").length) {
+
+            $('body').removeClass('openmenu');
+
+        }
+    });
+
+    $(".sharebtn").click(function(e) {
+        $(this).next(this).toggleClass("active");
+        setTimeout(function(){
+            $(".sharefb").toggleClass("moved");
+        }, 0);
+        setTimeout(function(){
+            $(".sharept").toggleClass("moved2");
+        }, 100);
+    });
+
+</script>
+</html>
+

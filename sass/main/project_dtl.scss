@@ -1,0 +1,233 @@
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+.projects-template-default {
+  .contact {
+    margin-top: 0;
+  }
+}
+
+.projects {
+  width: 100%;
+
+  .wrapper {
+    margin-top: 0;
+
+    @media (max-width: 768px) {
+      top: -50px;
+      position: relative;
+    }
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .highlight_project{
+    margin-bottom: 50px;
+    @media (max-width: 768px) {
+      margin-bottom: 0px;
+    }
+    .project-highlight {
+      height: 500px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      animation-name: load_image;
+      animation-duration: 1.5s;
+
+      @media (max-width: 768px) {
+        height: 250px;
+        margin-bottom: 0;
+      }
+    }
+    .background_image{
+      background-image:url('../images/marmer.jpg');
+      background-position:center center;
+      background-repeat:no-repeat;
+      background-size:contain;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -150;
+      @media (max-width: 768px) {
+        background-image:none;
+      }
+    }
+    .positionering{
+      margin: auto;
+
+      .project-highlight-content {
+        width: 100%;
+        margin: 0 auto;
+        @media (max-width: 768px) {
+          background-image:url('../images/marmer.jpg');
+          background-position:top left;
+          background-repeat:no-repeat;
+          background-size:contain;
+        }
+        // position: absolute;
+        // z-index: -150;
+
+        @media (max-width: 768px) {
+          width: 90%;
+          position: relative;
+          top: -50px;
+          padding: 10px 30px;
+          background-color: white;
+        }
+
+        h3 {
+          color: #000000;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 60px;
+          font-weight: bold;
+          text-align: left;
+
+          @media (max-width: 768px) {
+            font-size: 40px;
+            width: 100%;
+          }
+        }
+
+        h4 {
+          color: #E7B7B0;
+          font-family: "Sue Ellen Francisco", sans-serif;
+          font-size: 40px;
+          text-align: left;
+          margin-top: 40px;
+
+          @media (max-width: 768px) {
+            font-size: 45px;
+            width: 100%;
+          }
+        }
+        a{
+          .button_fill {
+            display: inline-block;
+            margin-top: 40px;
+
+            @media (max-width: 768px) {
+              margin-top: 20px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .projects-container {
+    //overflow-x: hidden !important;
+    @media (max-width: 768px) {
+      //width: 80%;
+      display: block;
+      margin: -10px auto 0 auto;
+      float: none;
+    }
+    .item{
+      margin-top: 50px;
+      @media screen and (max-width: 575px) {
+        margin-top: 80px;
+      }
+      a{
+        .project_item{
+          width: 100%;
+          height: 300px;
+          display: inline-block;
+          .text_block{
+            position: relative;
+            bottom: 25px;
+            width: 90%;
+          }
+          &:hover{
+            .text_block{
+              bottom: 40px !important;
+              width: 95% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .project {
+    height: 14vw;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    margin: 20px 0;
+
+    @media (max-width: 768px) {
+      height: 70vw;
+    }
+  }
+
+  // .row .project:first-child{
+  //   margin-right: 20px;
+
+  //   @media (max-width: 768px) {
+  //     margin-right: 0;
+  //   }
+  // }
+
+  .project-title {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    width: 80%;
+    background-color: #89C6D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h4 {
+      color: #FFFFFF;
+      font-family: "Sue Ellen Francisco", sans-serif;
+      font-size: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.filter-holder {
+  margin-top: 45px;
+  border: 5px solid $dark_pink;
+  position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.filter-title {
+  padding: 20px 10px;
+  text-align: center;
+  background-color: $dark_pink;
+  font-family: "Sue Ellen Francisco", sans-serif;
+  font-size: 36px;
+  color: $white;
+  display: block;
+  width: 80%;
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-items {
+  width: 90%;
+  margin: 100px auto 0 auto;
+
+}

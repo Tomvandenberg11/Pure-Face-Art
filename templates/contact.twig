@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="contact">
+        <div class="contact_gegevens row m-0">
+            <div class="col-12 col-md-5 p-0">
+                <div style="background-image: url('{{ Image(post.contact_image).src }}')" class="contact-image"></div>
+            </div>
+            <div class="col-12 col-md-7 p-0 contact-background">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2>{{ post.contact_name }}</h2>
+                        <h4>“{{ post.contact_quote }}”</h4>
+                        <p>{{ post.contact_description }}</p>
+                        <div class="contact-details">
+                            <ul>
+                                {% if options.email %}<li><a href="mailto:{{ options.email }}"><img src="{{ theme.link }}/images/mail.png">{{ options.email }}</a></li>{% endif %}
+                                {% if options.phone_number %}<li><a href="tel:{{ options.phone_number }}"><img src="{{ theme.link }}/images/phone.svg">+{{ options.phone_number }}</a></li>{% endif %}
+                                {% if options.city %}<li><img src="{{ theme.link }}/images/globe.png">{{ options.city }}</li>{% endif %}
+                                {% if options.instagram_link %}<li><a target="_blank" href="{{ option.instagram_link }}"><img src="{{ theme.link }}/images/instagram.png">@Purefaceart</a></li>{% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <p class="about-description">{{ post.contact_long_description }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper agenda_form" class="row ">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    {% include 'partial/contact-agenda.twig' %}
+                </div>
+                <div class="col-12 col-md-1"></div>
+                <div class="col-12 col-md-6 form">
+                    {% include 'partial/contact-form.twig' %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
